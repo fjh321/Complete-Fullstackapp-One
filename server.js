@@ -4,7 +4,7 @@
 // get all the tools we need
 var express = require('express');
 var app = express();
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 9000;
 const MongoClient = require('mongodb').MongoClient //setup to help me talk to db
 var mongoose = require('mongoose');//setup mongoose to help us talk to mongodbs better/easier
 var passport = require('passport');//for authentication
@@ -40,7 +40,7 @@ app.set('view engine', 'ejs'); // set up ejs for templating so we can use the ej
 
 // required for passport
 app.use(session({ //all i need to know about this "required for passport" code is that this creates a new session in my app
-  secret: 'rcbootcamp2021b', // session secret (I can name this whatever I want.)
+  secret: 'FJH-Fullstack-App-One', // session secret (I can name this whatever I want.)
   resave: true,
   saveUninitialized: true
 }));

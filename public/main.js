@@ -1,19 +1,19 @@
-var thumbUp = document.getElementsByClassName("fa-thumbs-up");
-var thumbDown = document.getElementsByClassName("fa-thumbs-down");
-var trash = document.getElementsByClassName("fa-trash");
 
-Array.from(thumbUp).forEach(function (element) {
+// const trash = document.getElementsByClassName("fa-trash");
+const deleteButton = document.getElementsByClassName('delete')
+const checkmark = document.getElementsByClassName('checkmark')
+const xMark = document.getElementsByClassName('xMark')
+
+Array.from(checkmark).forEach(function (element) {
   element.addEventListener('click', function () {
-    const name = this.parentNode.parentNode.childNodes[1].innerText
-    const msg = this.parentNode.parentNode.childNodes[3].innerText
-    const thumbUp = parseFloat(this.parentNode.parentNode.childNodes[5].innerText)
+    const taskSpan = this.closest('li').childNodes[3]//span on same line
+    const task = this.closest('li').childNodes[3].innerText//username node
+    // console.log(task)
     fetch('messages', {
       method: 'put',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        'name': name,
-        'msg': msg,
-        'thumbUp': thumbUp
+        'task': task
       })
     })
       .then(response => {
@@ -21,47 +21,47 @@ Array.from(thumbUp).forEach(function (element) {
       })
       .then(data => {
         console.log(data)
-        window.location.reload(true)
+        taskSpan.classList.add('strikethrough')
+        // window.location.reload(true)
       })
   });
 });
 
-Array.from(thumbDown).forEach(function (element) {
+/////////////////////////////////////NOW NEED TO REMOVE STRIKETHROUGH/////////////////////////////
+Array.from(xMark).forEach(function (element) {
   element.addEventListener('click', function () {
-    const name = this.parentNode.parentNode.childNodes[1].innerText
-    const msg = this.parentNode.parentNode.childNodes[3].innerText
-    const thumbDown = parseFloat(this.parentNode.parentNode.childNodes[5].innerText)
+    const taskSpan = this.closest('li').childNodes[3]//span on same line
+    const task = this.closest('li').childNodes[3].innerText//username node
+    console.log(task)
     fetch('messages', {
       method: 'put',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        'name': name,
-        'msg': msg,
-        'thumbDown': thumbDown
-      })//connected with the app.put, which in turn dives into the db collection and parses through messages.
+        'task': task
+      })
     })
       .then(response => {
         if (response.ok) return response.json()
       })
       .then(data => {
         console.log(data)
-        window.location.reload(true) //reloads the page which triggers our app.get
+        taskSpan.classList.remove('strikethrough')
+        // window.location.reload(true)
       })
   });
 });
 
-Array.from(trash).forEach(function (element) {
+
+Array.from(deleteButton).forEach(function (element) {
   element.addEventListener('click', function () {
-    const name = this.parentNode.parentNode.childNodes[1].innerText
-    const msg = this.parentNode.parentNode.childNodes[3].innerText
+    const task = this.closest('li').childNodes[3].innerText//text of to do item node
     fetch('messages', {
       method: 'delete',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        'name': name,
-        'msg': msg
+        'task': task
       })
     }).then(function (response) {
       window.location.reload()
