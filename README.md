@@ -1,6 +1,7 @@
 #Complete Fullstack App # 1
 
-<img width="240" alt="image" src="https://github.com/fjh321/Complete-Fullstackapp-One/assets/64885403/6858ef85-bb01-4e26-ab7c-6e70285cafb1">
+<img width="705" alt="image" src="https://github.com/fjh321/Complete-Fullstackapp-One/assets/64885403/0e82de27-d616-482e-a6d4-a7038d4da1b3">
+
 
 ## Installation
 1. Clone repo
