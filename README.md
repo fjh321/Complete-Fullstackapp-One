@@ -1,5 +1,8 @@
-## Installation
+#Complete Fullstack App # 1
 
+<img width="240" alt="image" src="https://github.com/fjh321/Complete-Fullstackapp-One/assets/64885403/6858ef85-bb01-4e26-ab7c-6e70285cafb1">
+
+## Installation
 1. Clone repo
 2. run `npm install`
 
@@ -13,5 +16,4 @@
 Modified from Scotch.io's auth tutorial
 
 
-<img width="325" alt="image" src="https://github.com/fjh321/Complete-Fullstackapp-One/assets/64885403/4b9e52e9-252a-4751-83df-cf7b3e131062">
 
