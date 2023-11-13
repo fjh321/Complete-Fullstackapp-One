@@ -1,6 +1,6 @@
 module.exports = {
 
-    'url': 'mongodb+srv://fernandojhernandez123:uYk35wgJqsUgSNvA@cluster0.vyoxyvg.mongodb.net/demo?retryWrites=true&w=majority',
+    'url': 'mongodb+srv://fernandojhernandez123:uYk35wgJqsUgSNvA@cluster0.vyoxyvg.mongodb.net/test?retryWrites=true&w=majority',
     'dbName': 'demo'
 };
 
